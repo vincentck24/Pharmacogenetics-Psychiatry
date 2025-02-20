@@ -1,0 +1,210 @@
+<!--
+
+Step-by-Step Guide zur Veröffentlichung auf GitHub Pages:
+
+1. Erstelle ein neues Repository auf GitHub (z. B. "pharmacogenetics-psychiatry").
+2. Erstelle eine neue Datei im Repository mit dem Namen "index.html".
+3. Kopiere diesen gesamten Code und füge ihn in die "index.html"-Datei ein.
+4. Committe die Änderungen (z. B. mit der Nachricht "Initial commit mit index.html").
+5. Gehe zu den Repository-Einstellungen:
+   - Klicke auf "Settings".
+   - Scrolle zu "GitHub Pages".
+   - Wähle unter "Source" den "main"-Branch aus und klicke auf "Save".
+6. Deine Website ist nach wenigen Minuten unter https://deinusername.github.io/pharmacogenetics-psychiatry erreichbar.
+
+Hinweis: Aktualisiere die Medikamenteninformationen und Genotyp-Phänotyp-Tabellen mit genauen Daten von PharmGKB, CPIC und DPWG.
+
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmakogenetik in der Psychiatrie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f4f4f4;
+            padding: 1em;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        details {
+            margin-bottom: 10px;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pharmakogenetik in der Psychiatrie</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#genes">Gene</a></li>
+                <li><a href="#medications">Medikamente</a></li>
+                <li><a href="#interpretation">Testergebnisse</a></li>
+                <li><a href="#application">Klinische Anwendung</a></li>
+                <li><a href="#resources">Ressourcen</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Willkommen</h2>
+            <p>Willkommen zur Ressource Pharmakogenetik in der Psychiatrie. Diese Website bietet Informationen darüber, wie genetische Variationen in den Genen CYP2D6 und CYP2C19 den Metabolismus psychotroper Medikamente beeinflussen können. Durch das Verständnis dieser Unterschiede können Kliniker die Arzneimitteltherapie optimieren, die Wirksamkeit verbessern und Nebenwirkungen reduzieren.</p>
+        </section>
+        <section id="genes">
+            <h2>Gene: CYP2D6 und CYP2C19</h2>
+            <h3>CYP2D6</h3>
+            <p>CYP2D6 metabolisiert 20-30% der psychotropen Medikamente. Genetische Variationen führen zu verschiedenen Metabolisierungsstatus:</p>
+            <ul>
+                <li><strong>Schlechter Metabolisierer (PM)</strong>: Keine oder reduzierte Enzymaktivität → höhere Medikamentenspiegel, mehr Nebenwirkungen.</li>
+                <li><strong>Intermediärer Metabolisierer (IM)</strong>: Reduzierte Enzymaktivität.</li>
+                <li><strong>Normaler Metabolisierer (NM)</strong>: Normale Enzymaktivität.</li>
+                <li><strong>Ultraschneller Metabolisierer (UM)</strong>: Erhöhte Enzymaktivität → schneller Abbau, reduzierte Wirksamkeit.</li>
+            </ul>
+            <h3>CYP2C19</h3>
+            <p>CYP2C19 ist wichtig für SSRIs wie Citalopram. Genetische Variationen führen zu:</p>
+            <ul>
+                <li><strong>Schlechter Metabolisierer (PM)</strong>: Reduzierte Enzymaktivität.</li>
+                <li><strong>Intermediärer Metabolisierer (IM)</strong>: Leicht reduzierte Enzymaktivität.</li>
+                <li><strong>Normaler Metabolisierer (NM)</strong>: Normale Enzymaktivität.</li>
+                <li><strong>Schneller Metabolisierer (RM)</strong>: Schnellerer Abbau.</li>
+                <li><strong>Ultraschneller Metabolisierer (UM)</strong>: Sehr schneller Abbau.</li>
+            </ul>
+        </section>
+        <section id="medications">
+            <h2>Medikamente</h2>
+            <!-- Hinweis: Die folgenden Informationen sind Beispiele. Bitte mit Daten von PharmGKB, CPIC und DPWG aktualisieren. -->
+            <details>
+                <summary>Paroxetin</summary>
+                <p><strong>Enzym:</strong> CYP2D6</p>
+                <p><strong>Auswirkungen:</strong></p>
+                <ul>
+                    <li>Schlechter Metabolisierer: Erhöhtes Risiko für Nebenwirkungen.</li>
+                    <li>Ultraschneller Metabolisierer: Reduzierte Wirksamkeit.</li>
+                </ul>
+                <p><strong>CPIC-Empfehlung:</strong> Bei PM Alternative erwägen; bei UM Dosisanpassung.</p>
+                <p><strong>DPWG-Empfehlung:</strong> Ähnlich wie CPIC.</p>
+                <p><strong>Quelle:</strong> <a href="https://www.pharmgkb.org/chemical/PA450801">PharmGKB Paroxetin Annotation</a></p>
+            </details>
+            <details>
+                <summary>Citalopram</summary>
+                <p><strong>Enzym:</strong> CYP2C19</p>
+                <p><strong>Auswirkungen:</strong></p>
+                <ul>
+                    <li>Schlechter Metabolisierer: Erhöhtes Risiko für Nebenwirkungen.</li>
+                    <li>Ultraschneller Metabolisierer: Reduzierte Wirksamkeit.</li>
+                </ul>
+                <p><strong>CPIC-Empfehlung:</strong> Bei PM Dosis um 50% reduzieren; bei UM Alternative erwägen.</p>
+                <p><strong>DPWG-Empfehlung:</strong> Ähnlich wie CPIC.</p>
+                <p><strong>Quelle:</strong> <a href="https://www.pharmgkb.org/chemical/PA449015">PharmGKB Citalopram Annotation</a></p>
+            </details>
+            <!-- Füge weitere Medikamente hinzu -->
+        </section>
+        <section id="interpretation">
+            <h2>Testergebnisse interpretieren</h2>
+            <h3>CYP2D6 Genotyp zu Phänotyp</h3>
+            <table>
+                <tr>
+                    <th>Genotyp</th>
+                    <th>Phänotyp</th>
+                </tr>
+                <tr>
+                    <td>*1/*1</td>
+                    <td>Normaler Metabolisierer</td>
+                </tr>
+                <tr>
+                    <td>*4/*4</td>
+                    <td>Schlechter Metabolisierer</td>
+                </tr>
+                <!-- Füge weitere Zeilen hinzu -->
+            </table>
+            <h3>CYP2C19 Genotyp zu Phänotyp</h3>
+            <table>
+                <tr>
+                    <th>Genotyp</th>
+                    <th>Phänotyp</th>
+                </tr>
+                <tr>
+                    <td>*1/*1</td>
+                    <td>Normaler Metabolisierer</td>
+                </tr>
+                <tr>
+                    <td>*2/*2</td>
+                    <td>Schlechter Metabolisierer</td>
+                </tr>
+                <!-- Füge weitere Zeilen hinzu -->
+            </table>
+        </section>
+        <section id="application">
+            <h2>Klinische Anwendung</h2>
+            <p>Bei der Verordnung von Medikamenten, die über CYP2D6 oder CYP2C19 metabolisiert werden, beachte den Metabolisierungsstatus:</p>
+            <ul>
+                <li>Bei <strong>Schlechten Metabolisierern</strong> mit niedrigerer Dosis beginnen oder Alternative wählen.</li>
+                <li>Bei <strong>Ultraschnellen Metabolisierern</strong> höhere Dosen oder Alternativen erwägen.</li>
+            </ul>
+            <p>Überwache die Reaktion des Patienten und passe die Therapie an. Genetische Daten sollten mit klinischem Urteil kombiniert werden.</p>
+        </section>
+        <section id="resources">
+            <h2>Ressourcen</h2>
+            <ul>
+                <li><a href="https://www.pharmgkb.org/">PharmGKB</a></li>
+                <li><a href="https://cpicpgx.org/guidelines/">CPIC Guidelines</a></li>
+                <li><a href="https://www.knmp.nl/dossiers/farmacogenetica">DPWG Guidelines</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Haftungsausschluss: Diese Informationen dienen Bildungszwecken und ersetzen keine professionelle medizinische Beratung. Konsultiere immer einen qualifizierten Arzt.</p>
+    </footer>
+</body>
+</html>
