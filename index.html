@@ -1,46 +1,27 @@
-<!--
-
-Step-by-Step Guide zur Veröffentlichung auf GitHub Pages:
-
-1. Erstelle ein neues Repository auf GitHub (z. B. "pharmacogenetics-psychiatry").
-2. Erstelle eine neue Datei im Repository mit dem Namen "index.html".
-3. Kopiere diesen gesamten Code und füge ihn in die "index.html"-Datei ein.
-4. Committe die Änderungen (z. B. mit der Nachricht "Initial commit mit index.html").
-5. Gehe zu den Repository-Einstellungen:
-   - Klicke auf "Settings".
-   - Scrolle zu "GitHub Pages".
-   - Wähle unter "Source" den "main"-Branch aus und klicke auf "Save".
-6. Deine Website ist nach wenigen Minuten unter https://deinusername.github.io/pharmacogenetics-psychiatry erreichbar.
-
-Hinweis: Aktualisiere die Medikamenteninformationen und Genotyp-Phänotyp-Tabellen mit genauen Daten von PharmGKB, CPIC und DPWG.
-
--->
-
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharmakogenetik in der Psychiatrie</title>
+    <title>Pharmacogenetics in Psychiatry: CYP2D6 and CYP2C19</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #f4f4f4;
-            padding: 1em;
+            background-color: #f2f2f2;
+            padding: 20px;
             text-align: center;
         }
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
         nav ul li {
             display: inline;
-            margin-right: 10px;
+            margin-right: 20px;
         }
         nav ul li a {
             text-decoration: none;
@@ -52,19 +33,13 @@ Hinweis: Aktualisiere die Medikamenteninformationen und Genotyp-Phänotyp-Tabell
         section {
             margin-bottom: 40px;
         }
-        h2 {
+        h2, h3 {
             color: #0056b3;
         }
-        details {
-            margin-bottom: 10px;
-        }
-        summary {
-            cursor: pointer;
-            font-weight: bold;
-        }
         table {
-            border-collapse: collapse;
             width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
         }
         th, td {
             border: 1px solid #ddd;
@@ -75,136 +50,222 @@ Hinweis: Aktualisiere die Medikamenteninformationen und Genotyp-Phänotyp-Tabell
             background-color: #f2f2f2;
         }
         footer {
-            background-color: #f4f4f4;
+            background-color: #f2f2f2;
             padding: 10px;
             text-align: center;
             font-size: 0.8em;
+        }
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+            table {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Pharmakogenetik in der Psychiatrie</h1>
+        <h1>Pharmacogenetics in Psychiatry: CYP2D6 and CYP2C19</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#genes">Gene</a></li>
-                <li><a href="#medications">Medikamente</a></li>
-                <li><a href="#interpretation">Testergebnisse</a></li>
-                <li><a href="#application">Klinische Anwendung</a></li>
-                <li><a href="#resources">Ressourcen</a></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#medications">Affected Medications</a></li>
+                <li><a href="#phenotypes">Phenotypes and Their Impact</a></li>
+                <li><a href="#recommendations">Dosing Recommendations</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="home">
-            <h2>Willkommen</h2>
-            <p>Willkommen zur Ressource Pharmakogenetik in der Psychiatrie. Diese Website bietet Informationen darüber, wie genetische Variationen in den Genen CYP2D6 und CYP2C19 den Metabolismus psychotroper Medikamente beeinflussen können. Durch das Verständnis dieser Unterschiede können Kliniker die Arzneimitteltherapie optimieren, die Wirksamkeit verbessern und Nebenwirkungen reduzieren.</p>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>The genes <strong>CYP2D6</strong> and <strong>CYP2C19</strong> play a crucial role in the metabolism of many psychiatric medications, including antidepressants and antipsychotics. Variations in these genes can lead to different phenotypes—Poor Metabolizer (PM), Intermediate Metabolizer (IM), Extensive Metabolizer (EM), Rapid Metabolizer (RM), and Ultrarapid Metabolizer (UM)—that affect how patients process these drugs, impacting treatment efficacy and safety.</p>
+            <p>Pharmacogenetic testing for CYP2D6 and CYP2C19 allows clinicians to personalize medication choices and dosages, potentially improving patient outcomes and minimizing adverse effects.</p>
         </section>
-        <section id="genes">
-            <h2>Gene: CYP2D6 und CYP2C19</h2>
-            <h3>CYP2D6</h3>
-            <p>CYP2D6 metabolisiert 20-30% der psychotropen Medikamente. Genetische Variationen führen zu verschiedenen Metabolisierungsstatus:</p>
-            <ul>
-                <li><strong>Schlechter Metabolisierer (PM)</strong>: Keine oder reduzierte Enzymaktivität → höhere Medikamentenspiegel, mehr Nebenwirkungen.</li>
-                <li><strong>Intermediärer Metabolisierer (IM)</strong>: Reduzierte Enzymaktivität.</li>
-                <li><strong>Normaler Metabolisierer (NM)</strong>: Normale Enzymaktivität.</li>
-                <li><strong>Ultraschneller Metabolisierer (UM)</strong>: Erhöhte Enzymaktivität → schneller Abbau, reduzierte Wirksamkeit.</li>
-            </ul>
-            <h3>CYP2C19</h3>
-            <p>CYP2C19 ist wichtig für SSRIs wie Citalopram. Genetische Variationen führen zu:</p>
-            <ul>
-                <li><strong>Schlechter Metabolisierer (PM)</strong>: Reduzierte Enzymaktivität.</li>
-                <li><strong>Intermediärer Metabolisierer (IM)</strong>: Leicht reduzierte Enzymaktivität.</li>
-                <li><strong>Normaler Metabolisierer (NM)</strong>: Normale Enzymaktivität.</li>
-                <li><strong>Schneller Metabolisierer (RM)</strong>: Schnellerer Abbau.</li>
-                <li><strong>Ultraschneller Metabolisierer (UM)</strong>: Sehr schneller Abbau.</li>
-            </ul>
-        </section>
+
         <section id="medications">
-            <h2>Medikamente</h2>
-            <!-- Hinweis: Die folgenden Informationen sind Beispiele. Bitte mit Daten von PharmGKB, CPIC und DPWG aktualisieren. -->
-            <details>
-                <summary>Paroxetin</summary>
-                <p><strong>Enzym:</strong> CYP2D6</p>
-                <p><strong>Auswirkungen:</strong></p>
-                <ul>
-                    <li>Schlechter Metabolisierer: Erhöhtes Risiko für Nebenwirkungen.</li>
-                    <li>Ultraschneller Metabolisierer: Reduzierte Wirksamkeit.</li>
-                </ul>
-                <p><strong>CPIC-Empfehlung:</strong> Bei PM Alternative erwägen; bei UM Dosisanpassung.</p>
-                <p><strong>DPWG-Empfehlung:</strong> Ähnlich wie CPIC.</p>
-                <p><strong>Quelle:</strong> <a href="https://www.pharmgkb.org/chemical/PA450801">PharmGKB Paroxetin Annotation</a></p>
-            </details>
-            <details>
-                <summary>Citalopram</summary>
-                <p><strong>Enzym:</strong> CYP2C19</p>
-                <p><strong>Auswirkungen:</strong></p>
-                <ul>
-                    <li>Schlechter Metabolisierer: Erhöhtes Risiko für Nebenwirkungen.</li>
-                    <li>Ultraschneller Metabolisierer: Reduzierte Wirksamkeit.</li>
-                </ul>
-                <p><strong>CPIC-Empfehlung:</strong> Bei PM Dosis um 50% reduzieren; bei UM Alternative erwägen.</p>
-                <p><strong>DPWG-Empfehlung:</strong> Ähnlich wie CPIC.</p>
-                <p><strong>Quelle:</strong> <a href="https://www.pharmgkb.org/chemical/PA449015">PharmGKB Citalopram Annotation</a></p>
-            </details>
-            <!-- Füge weitere Medikamente hinzu -->
-        </section>
-        <section id="interpretation">
-            <h2>Testergebnisse interpretieren</h2>
-            <h3>CYP2D6 Genotyp zu Phänotyp</h3>
+            <h2>Affected Medications</h2>
+            <p>Below is a list of psychiatric medications metabolized by CYP2D6 and/or CYP2C19:</p>
+
+            <h3>Antidepressants</h3>
             <table>
-                <tr>
-                    <th>Genotyp</th>
-                    <th>Phänotyp</th>
-                </tr>
-                <tr>
-                    <td>*1/*1</td>
-                    <td>Normaler Metabolisierer</td>
-                </tr>
-                <tr>
-                    <td>*4/*4</td>
-                    <td>Schlechter Metabolisierer</td>
-                </tr>
-                <!-- Füge weitere Zeilen hinzu -->
+                <thead>
+                    <tr>
+                        <th>Medication</th>
+                        <th>Primary Metabolizing Enzyme</th>
+                        <th>Secondary Enzyme</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Fluvoxamine</td><td>CYP2D6</td><td>-</td></tr>
+                    <tr><td>Paroxetine</td><td>CYP2D6</td><td>-</td></tr>
+                    <tr><td>Citalopram</td><td>CYP2C19</td><td>CYP2D6</td></tr>
+                    <tr><td>Escitalopram</td><td>CYP2C19</td><td>CYP2D6</td></tr>
+                    <tr><td>Sertraline</td><td>CYP2C19</td><td>CYP2D6</td></tr>
+                    <tr><td>Amitriptyline</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
+                    <tr><td>Clomipramine</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
+                    <tr><td>Doxepin</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
+                    <tr><td>Imipramine</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
+                    <tr><td>Trimipramine</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
+                    <tr><td>Nortriptyline</td><td>CYP2D6</td><td>-</td></tr>
+                    <tr><td>Desipramine</td><td>CYP2D6</td><td>-</td></tr>
+                </tbody>
             </table>
-            <h3>CYP2C19 Genotyp zu Phänotyp</h3>
+
+            <h3>Antipsychotics</h3>
             <table>
-                <tr>
-                    <th>Genotyp</th>
-                    <th>Phänotyp</th>
-                </tr>
-                <tr>
-                    <td>*1/*1</td>
-                    <td>Normaler Metabolisierer</td>
-                </tr>
-                <tr>
-                    <td>*2/*2</td>
-                    <td>Schlechter Metabolisierer</td>
-                </tr>
-                <!-- Füge weitere Zeilen hinzu -->
+                <thead>
+                    <tr>
+                        <th>Medication</th>
+                        <th>Primary Metabolizing Enzyme</th>
+                        <th>Secondary Enzyme</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Haloperidol</td><td>CYP2D6</td><td>-</td></tr>
+                    <tr><td>Chlorpromazine</td><td>CYP2D6</td><td>-</td></tr>
+                    <tr><td>Thioridazine</td><td>CYP2D6</td><td>-</td></tr>
+                    <tr><td>Perphenazine</td><td>CYP2D6</td><td>-</td></tr>
+                    <tr><td>Risperidone</td><td>CYP2D6</td><td>CYP3A4</td></tr>
+                    <tr><td>Aripiprazole</td><td>CYP2D6, CYP3A4</td><td>-</td></tr>
+                    <tr><td>Brexpiprazole</td><td>CYP2D6, CYP3A4</td><td>-</td></tr>
+                    <tr><td>Olanzapine</td><td>CYP1A2</td><td>CYP2D6</td></tr>
+                    <tr><td>Clozapine</td><td>CYP1A2</td><td>CYP2C19, CYP2D6, CYP3A4</td></tr>
+                </tbody>
             </table>
         </section>
-        <section id="application">
-            <h2>Klinische Anwendung</h2>
-            <p>Bei der Verordnung von Medikamenten, die über CYP2D6 oder CYP2C19 metabolisiert werden, beachte den Metabolisierungsstatus:</p>
+
+        <section id="phenotypes">
+            <h2>Phenotypes and Their Impact</h2>
+            <p>The phenotypes for CYP2D6 and CYP2C19 are categorized as follows:</p>
+
+            <h3>CYP2D6 Phenotypes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phenotype</th>
+                        <th>Activity Score</th>
+                        <th>Impact on Drug Metabolism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Poor Metabolizer (PM)</td>
+                        <td>0</td>
+                        <td>No or significantly reduced enzyme activity; higher drug levels, increased risk of side effects.</td>
+                    </tr>
+                    <tr>
+                        <td>Intermediate Metabolizer (IM)</td>
+                        <td>0.5 or 1</td>
+                        <td>Reduced enzyme activity; may require dose adjustments.</td>
+                    </tr>
+                    <tr>
+                        <td>Extensive Metabolizer (EM)</td>
+                        <td>1.5 or 2</td>
+                        <td>Normal enzyme activity; standard dosing applies.</td>
+                    </tr>
+                    <tr>
+                        <td>Ultrarapid Metabolizer (UM)</td>
+                        <td>>2</td>
+                        <td>Increased enzyme activity; lower drug levels, may require higher doses.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>CYP2C19 Phenotypes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phenotype</th>
+                        <th>Alleles</th>
+                        <th>Impact on Drug Metabolism</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Poor Metabolizer (PM)</td>
+                        <td>No functional alleles (e.g., *2/*2)</td>
+                        <td>Significantly reduced enzyme activity; higher drug levels, increased risk of side effects.</td>
+                    </tr>
+                    <tr>
+                        <td>Intermediate Metabolizer (IM)</td>
+                        <td>One functional allele (e.g., *1/*2)</td>
+                        <td>Reduced enzyme activity; may require dose adjustments.</td>
+                    </tr>
+                    <tr>
+                        <td>Extensive Metabolizer (EM)</td>
+                        <td>Two functional alleles (*1/*1)</td>
+                        <td>Normal enzyme activity; standard dosing applies.</td>
+                    </tr>
+                    <tr>
+                        <td>Rapid Metabolizer (RM)</td>
+                        <td>One *17 allele (e.g., *1/*17)</td>
+                        <td>Increased enzyme activity; may require higher doses.</td>
+                    </tr>
+                    <tr>
+                        <td>Ultrarapid Metabolizer (UM)</td>
+                        <td>Two *17 alleles (*17/*17)</td>
+                        <td>Significantly increased enzyme activity; lower drug levels, may require higher doses.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="recommendations">
+            <h2>Dosing Recommendations</h2>
+            <p>The <strong>Clinical Pharmacogenetics Implementation Consortium (CPIC)</strong> and the <strong>Dutch Pharmacogenetics Working Group (DPWG)</strong> provide guidelines for adjusting medication doses based on CYP2D6 and CYP2C19 phenotypes. Key recommendations include:</p>
+
+            <h3>Antidepressants</h3>
             <ul>
-                <li>Bei <strong>Schlechten Metabolisierern</strong> mit niedrigerer Dosis beginnen oder Alternative wählen.</li>
-                <li>Bei <strong>Ultraschnellen Metabolisierern</strong> höhere Dosen oder Alternativen erwägen.</li>
+                <li><strong>SSRIs (e.g., Citalopram, Escitalopram, Sertraline) - CYP2C19:</strong>
+                    <ul>
+                        <li>PM: Reduce dose by 50% or select an alternative drug.</li>
+                        <li>IM: Consider dose reduction or alternative drug.</li>
+                        <li>UM: May require higher doses or alternative drug.</li>
+                    </ul>
+                </li>
+                <li><strong>Tricyclic Antidepressants (e.g., Amitriptyline, Nortriptyline) - CYP2D6 and CYP2C19:</strong>
+                    <ul>
+                        <li>PM for CYP2D6: Reduce dose or select alternative drug.</li>
+                        <li>UM for CYP2D6: May require higher doses.</li>
+                        <li>PM for CYP2C19: Consider dose adjustments.</li>
+                    </ul>
+                </li>
             </ul>
-            <p>Überwache die Reaktion des Patienten und passe die Therapie an. Genetische Daten sollten mit klinischem Urteil kombiniert werden.</p>
-        </section>
-        <section id="resources">
-            <h2>Ressourcen</h2>
+
+            <h3>Antipsychotics</h3>
             <ul>
-                <li><a href="https://www.pharmgkb.org/">PharmGKB</a></li>
+                <li><strong>Risperidone - CYP2D6:</strong>
+                    <ul>
+                        <li>PM: Reduce dose or select alternative drug.</li>
+                        <li>UM: May require higher doses.</li>
+                    </ul>
+                </li>
+                <li><strong>Aripiprazole - CYP2D6:</strong>
+                    <ul>
+                        <li>PM: Reduce dose.</li>
+                        <li>UM: May require higher doses.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>For detailed guidelines, refer to the <a href="https://cpicpgx.org/guidelines/">CPIC Guidelines</a> and <a href="https://www.knmp.nl/dossiers/farmacogenetica">DPWG Guidelines</a>.</p>
+        </section>
+
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>For more information, visit these resources:</p>
+            <ul>
                 <li><a href="https://cpicpgx.org/guidelines/">CPIC Guidelines</a></li>
                 <li><a href="https://www.knmp.nl/dossiers/farmacogenetica">DPWG Guidelines</a></li>
+                <li><a href="https://www.pharmgkb.org/">PharmGKB</a></li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>Haftungsausschluss: Diese Informationen dienen Bildungszwecken und ersetzen keine professionelle medizinische Beratung. Konsultiere immer einen qualifizierten Arzt.</p>
+        <p>Disclaimer: This website is for informational purposes only and should not be considered medical advice. Always consult a qualified healthcare provider before making changes to medication regimens.</p>
     </footer>
 </body>
 </html>
