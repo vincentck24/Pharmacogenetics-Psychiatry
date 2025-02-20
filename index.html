@@ -1,271 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharmacogenetics in Psychiatry: CYP2D6 and CYP2C19</title>
+    <title>Pharmakogenetik in der Psychiatrie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #f2f2f2;
-            padding: 20px;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-        main {
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        h2, h3 {
-            color: #0056b3;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        footer {
-            background-color: #f2f2f2;
-            padding: 10px;
-            text-align: center;
-            font-size: 0.8em;
-        }
-        @media (max-width: 768px) {
-            nav ul li {
-                display: block;
-                margin-bottom: 10px;
-            }
-            table {
-                font-size: 0.9em;
-            }
-        }
+        /* Siehe CSS unten */
     </style>
 </head>
 <body>
     <header>
-        <h1>Pharmacogenetics in Psychiatry: CYP2D6 and CYP2C19</h1>
-        <nav>
-            <ul>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#medications">Affected Medications</a></li>
-                <li><a href="#phenotypes">Phenotypes and Their Impact</a></li>
-                <li><a href="#recommendations">Dosing Recommendations</a></li>
-                <li><a href="#resources">Resources</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <h1>Pharmakogenetik in der Psychiatrie</h1>
+            <p class="subtitle">Personalisierte Dosierungsempfehlungen für Psychopharmaka</p>
+            <nav class="sticky-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#medikamente">Medikamente</a></li>
+                    <li><a href="#phaenotypen">Phänotypen</a></li>
+                    <li><a href="#empfehlungen">Empfehlungen</a></li>
+                    <li><a href="#ressourcen">Ressourcen</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Medikament suchen...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>The genes <strong>CYP2D6</strong> and <strong>CYP2C19</strong> play a crucial role in the metabolism of many psychiatric medications, including antidepressants and antipsychotics. Variations in these genes can lead to different phenotypes—Poor Metabolizer (PM), Intermediate Metabolizer (IM), Extensive Metabolizer (EM), Rapid Metabolizer (RM), and Ultrarapid Metabolizer (UM)—that affect how patients process these drugs, impacting treatment efficacy and safety.</p>
-            <p>Pharmacogenetic testing for CYP2D6 and CYP2C19 allows clinicians to personalize medication choices and dosages, potentially improving patient outcomes and minimizing adverse effects.</p>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h2>Willkommen zur Pharmakogenetik</h2>
+                <p>Entdecken Sie personalisierte Dosierungsempfehlungen für psychiatrische Medikamente basierend auf CYP2D6- und CYP2C19-Phänotypen.</p>
+                <a href="#medikamente" class="cta-button">Jetzt starten</a>
+            </div>
         </section>
 
-        <section id="medications">
-            <h2>Affected Medications</h2>
-            <p>Below is a list of psychiatric medications metabolized by CYP2D6 and/or CYP2C19:</p>
-
-            <h3>Antidepressants</h3>
-            <table>
+        <section id="medikamente" class="content-section">
+            <h2>Betroffene Medikamente</h2>
+            <div class="filter-buttons">
+                <button data-filter="all" class="filter-btn active">Alle</button>
+                <button data-filter="antidepressiva" class="filter-btn">Antidepressiva</button>
+                <button data-filter="antipsychotika" class="filter-btn">Antipsychotika</button>
+                <button data-filter="andere" class="filter-btn">Andere</button>
+            </div>
+            <table id="medikamenteTable" class="sortable-table">
                 <thead>
                     <tr>
-                        <th>Medication</th>
-                        <th>Primary Metabolizing Enzyme</th>
-                        <th>Secondary Enzyme</th>
+                        <th>Medikament</th>
+                        <th>Klasse</th>
+                        <th>Enzym</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Fluvoxamine</td><td>CYP2D6</td><td>-</td></tr>
-                    <tr><td>Paroxetine</td><td>CYP2D6</td><td>-</td></tr>
-                    <tr><td>Citalopram</td><td>CYP2C19</td><td>CYP2D6</td></tr>
-                    <tr><td>Escitalopram</td><td>CYP2C19</td><td>CYP2D6</td></tr>
-                    <tr><td>Sertraline</td><td>CYP2C19</td><td>CYP2D6</td></tr>
-                    <tr><td>Amitriptyline</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
-                    <tr><td>Clomipramine</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
-                    <tr><td>Doxepin</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
-                    <tr><td>Imipramine</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
-                    <tr><td>Trimipramine</td><td>CYP2D6, CYP2C19</td><td>-</td></tr>
-                    <tr><td>Nortriptyline</td><td>CYP2D6</td><td>-</td></tr>
-                    <tr><td>Desipramine</td><td>CYP2D6</td><td>-</td></tr>
-                </tbody>
-            </table>
-
-            <h3>Antipsychotics</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Medication</th>
-                        <th>Primary Metabolizing Enzyme</th>
-                        <th>Secondary Enzyme</th>
+                    <tr data-klasse="antidepressiva">
+                        <td>Citalopram</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2C19</td>
+                        <td><button class="details-btn" data-medikament="citalopram">Details</button></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Haloperidol</td><td>CYP2D6</td><td>-</td></tr>
-                    <tr><td>Chlorpromazine</td><td>CYP2D6</td><td>-</td></tr>
-                    <tr><td>Thioridazine</td><td>CYP2D6</td><td>-</td></tr>
-                    <tr><td>Perphenazine</td><td>CYP2D6</td><td>-</td></tr>
-                    <tr><td>Risperidone</td><td>CYP2D6</td><td>CYP3A4</td></tr>
-                    <tr><td>Aripiprazole</td><td>CYP2D6, CYP3A4</td><td>-</td></tr>
-                    <tr><td>Brexpiprazole</td><td>CYP2D6, CYP3A4</td><td>-</td></tr>
-                    <tr><td>Olanzapine</td><td>CYP1A2</td><td>CYP2D6</td></tr>
-                    <tr><td>Clozapine</td><td>CYP1A2</td><td>CYP2C19, CYP2D6, CYP3A4</td></tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Escitalopram</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2C19</td>
+                        <td><button class="details-btn" data-medikament="escitalopram">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Sertralin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2C19</td>
+                        <td><button class="details-btn" data-medikament="sertralin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Fluvoxamin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="fluvoxamin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Paroxetin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="paroxetin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Amitriptylin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2D6, CYP2C19</td>
+                        <td><button class="details-btn" data-medikament="amitriptylin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Clomipramin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2D6, CYP2C19</td>
+                        <td><button class="details-btn" data-medikament="clomipramin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Doxepin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2D6, CYP2C19</td>
+                        <td><button class="details-btn" data-medikament="doxepin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Imipramin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2D6, CYP2C19</td>
+                        <td><button class="details-btn" data-medikament="imipramin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Trimipramin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2D6, CYP2C19</td>
+                        <td><button class="details-btn" data-medikament="trimipramin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Nortriptylin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="nortriptylin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antidepressiva">
+                        <td>Desipramin</td>
+                        <td>Antidepressiva</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="desipramin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antipsychotika">
+                        <td>Haloperidol</td>
+                        <td>Antipsychotika</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="haloperidol">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antipsychotika">
+                        <td>Chlorpromazin</td>
+                        <td>Antipsychotika</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="chlorpromazin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antipsychotika">
+                        <td>Thioridazin</td>
+                        <td>Antipsychotika</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="thioridazin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antipsychotika">
+                        <td>Perphenazin</td>
+                        <td>Antipsychotika</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="perphenazin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antipsychotika">
+                        <td>Risperidon</td>
+                        <td>Antipsychotika</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="risperidon">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antipsychotika">
+                        <td>Aripiprazol</td>
+                        <td>Antipsychotika</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="aripiprazol">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antipsychotika">
+                        <td>Brexpiprazol</td>
+                        <td>Antipsychotika</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="brexpiprazol">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antipsychotika">
+                        <td>Olanzapin</td>
+                        <td>Antipsychotika</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="olanzapin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="antipsychotika">
+                        <td>Clozapin</td>
+                        <td>Antipsychotika</td>
+                        <td>CYP2C19</td>
+                        <td><button class="details-btn" data-medikament="clozapin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="andere">
+                        <td>Atomoxetin</td>
+                        <td>Andere</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="atomoxetin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="andere">
+                        <td>Venlafaxin</td>
+                        <td>Andere</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="venlafaxin">Details</button></td>
+                    </tr>
+                    <tr data-klasse="andere">
+                        <td>Duloxetin</td>
+                        <td>Andere</td>
+                        <td>CYP2D6</td>
+                        <td><button class="details-btn" data-medikament="duloxetin">Details</button></td>
+                    </tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="phenotypes">
-            <h2>Phenotypes and Their Impact</h2>
-            <p>The phenotypes for CYP2D6 and CYP2C19 are categorized as follows:</p>
-
-            <h3>CYP2D6 Phenotypes</h3>
-            <table>
+        <section id="phaenotypen" class="content-section">
+            <h2>Phänotypen und ihre Auswirkungen</h2>
+            <h3>CYP2D6 Phänotypen</h3>
+            <table class="info-table">
                 <thead>
                     <tr>
-                        <th>Phenotype</th>
-                        <th>Activity Score</th>
-                        <th>Impact on Drug Metabolism</th>
+                        <th>Phänotyp</th>
+                        <th>Aktivitätswert</th>
+                        <th>Auswirkung</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Poor Metabolizer (PM)</td>
                         <td>0</td>
-                        <td>No or significantly reduced enzyme activity; higher drug levels, increased risk of side effects.</td>
+                        <td>Keine oder stark reduzierte Enzymaktivität; höhere Medikamentenspiegel, erhöhtes Risiko für Nebenwirkungen.</td>
                     </tr>
                     <tr>
                         <td>Intermediate Metabolizer (IM)</td>
-                        <td>0.5 or 1</td>
-                        <td>Reduced enzyme activity; may require dose adjustments.</td>
+                        <td>0,5 oder 1</td>
+                        <td>Reduzierte Enzymaktivität; Dosisanpassung möglicherweise erforderlich.</td>
                     </tr>
                     <tr>
                         <td>Extensive Metabolizer (EM)</td>
-                        <td>1.5 or 2</td>
-                        <td>Normal enzyme activity; standard dosing applies.</td>
+                        <td>1,5 oder 2</td>
+                        <td>Normale Enzymaktivität; Standarddosierung.</td>
                     </tr>
                     <tr>
                         <td>Ultrarapid Metabolizer (UM)</td>
                         <td>>2</td>
-                        <td>Increased enzyme activity; lower drug levels, may require higher doses.</td>
+                        <td>Erhöhte Enzymaktivität; niedrigere Medikamentenspiegel, höhere Dosen möglich.</td>
                     </tr>
                 </tbody>
             </table>
-
-            <h3>CYP2C19 Phenotypes</h3>
-            <table>
+            <h3>CYP2C19 Phänotypen</h3>
+            <table class="info-table">
                 <thead>
                     <tr>
-                        <th>Phenotype</th>
-                        <th>Alleles</th>
-                        <th>Impact on Drug Metabolism</th>
+                        <th>Phänotyp</th>
+                        <th>Allele</th>
+                        <th>Auswirkung</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Poor Metabolizer (PM)</td>
-                        <td>No functional alleles (e.g., *2/*2)</td>
-                        <td>Significantly reduced enzyme activity; higher drug levels, increased risk of side effects.</td>
+                        <td>Keine funktionalen Allele (z.B. *2/*2)</td>
+                        <td>Stark reduzierte Enzymaktivität; höhere Medikamentenspiegel.</td>
                     </tr>
                     <tr>
                         <td>Intermediate Metabolizer (IM)</td>
-                        <td>One functional allele (e.g., *1/*2)</td>
-                        <td>Reduced enzyme activity; may require dose adjustments.</td>
+                        <td>Ein funktionales Allel (z.B. *1/*2)</td>
+                        <td>Reduzierte Enzymaktivität; Dosisanpassung möglich.</td>
                     </tr>
                     <tr>
                         <td>Extensive Metabolizer (EM)</td>
-                        <td>Two functional alleles (*1/*1)</td>
-                        <td>Normal enzyme activity; standard dosing applies.</td>
+                        <td>Zwei funktionale Allele (*1/*1)</td>
+                        <td>Normale Enzymaktivität; Standarddosierung.</td>
                     </tr>
                     <tr>
                         <td>Rapid Metabolizer (RM)</td>
-                        <td>One *17 allele (e.g., *1/*17)</td>
-                        <td>Increased enzyme activity; may require higher doses.</td>
+                        <td>Ein *17 Allel (z.B. *1/*17)</td>
+                        <td>Erhöhte Enzymaktivität; höhere Dosen möglich.</td>
                     </tr>
                     <tr>
                         <td>Ultrarapid Metabolizer (UM)</td>
-                        <td>Two *17 alleles (*17/*17)</td>
-                        <td>Significantly increased enzyme activity; lower drug levels, may require higher doses.</td>
+                        <td>Zwei *17 Allele (*17/*17)</td>
+                        <td>Stark erhöhte Enzymaktivität; höhere Dosen erforderlich.</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="recommendations">
-            <h2>Dosing Recommendations</h2>
-            <p>The <strong>Clinical Pharmacogenetics Implementation Consortium (CPIC)</strong> and the <strong>Dutch Pharmacogenetics Working Group (DPWG)</strong> provide guidelines for adjusting medication doses based on CYP2D6 and CYP2C19 phenotypes. Key recommendations include:</p>
-
-            <h3>Antidepressants</h3>
-            <ul>
-                <li><strong>SSRIs (e.g., Citalopram, Escitalopram, Sertraline) - CYP2C19:</strong>
+        <section id="empfehlungen" class="content-section">
+            <h2>Dosierungsempfehlungen</h2>
+            <p>Basierend auf CPIC- und DPWG-Richtlinien.</p>
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h4>Citalopram (CYP2C19)</h4>
                     <ul>
-                        <li>PM: Reduce dose by 50% or select an alternative drug.</li>
-                        <li>IM: Consider dose reduction or alternative drug.</li>
-                        <li>UM: May require higher doses or alternative drug.</li>
+                        <li><strong>PM:</strong> Dosis um 50% reduzieren oder Alternative wählen.</li>
+                        <li><strong>IM:</strong> Dosis um 25% reduzieren.</li>
+                        <li><strong>UM:</strong> Alternative wählen oder Dosis erhöhen.</li>
                     </ul>
-                </li>
-                <li><strong>Tricyclic Antidepressants (e.g., Amitriptyline, Nortriptyline) - CYP2D6 and CYP2C19:</strong>
-                    <ul>
-                        <li>PM for CYP2D6: Reduce dose or select alternative drug.</li>
-                        <li>UM for CYP2D6: May require higher doses.</li>
-                        <li>PM for CYP2C19: Consider dose adjustments.</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <h3>Antipsychotics</h3>
-            <ul>
-                <li><strong>Risperidone - CYP2D6:</strong>
-                    <ul>
-                        <li>PM: Reduce dose or select alternative drug.</li>
-                        <li>UM: May require higher doses.</li>
-                    </ul>
-                </li>
-                <li><strong>Aripiprazole - CYP2D6:</strong>
-                    <ul>
-                        <li>PM: Reduce dose.</li>
-                        <li>UM: May require higher doses.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>For detailed guidelines, refer to the <a href="https://cpicpgx.org/guidelines/">CPIC Guidelines</a> and <a href="https://www.knmp.nl/dossiers/farmacogenetica">DPWG Guidelines</a>.</p>
+                </div>
+                <!-- Weitere Empfehlungen können hier als Karten hinzugefügt werden -->
+            </div>
         </section>
 
-        <section id="resources">
-            <h2>Resources</h2>
-            <p>For more information, visit these resources:</p>
-            <ul>
-                <li><a href="https://cpicpgx.org/guidelines/">CPIC Guidelines</a></li>
-                <li><a href="https://www.knmp.nl/dossiers/farmacogenetica">DPWG Guidelines</a></li>
-                <li><a href="https://www.pharmgkb.org/">PharmGKB</a></li>
+        <section id="ressourcen" class="content-section">
+            <h2>Ressourcen</h2>
+            <ul class="resource-list">
+                <li><a href="https://cpicpgx.org/guidelines/" target="_blank">CPIC Richtlinien</a></li>
+                <li><a href="https://www.knmp.nl/dossiers/farmacogenetica" target="_blank">DPWG Richtlinien</a></li>
+                <li><a href="https://www.pharmgkb.org/" target="_blank">PharmGKB</a></li>
             </ul>
         </section>
     </main>
+
     <footer>
-        <p>Disclaimer: This website is for informational purposes only and should not be considered medical advice. Always consult a qualified healthcare provider before making changes to medication regimens.</p>
+        <p>Haftungsausschluss: Diese Informationen dienen nur zu Bildungszwecken und ersetzen keine medizinische Beratung. Konsultieren Sie einen Arzt.</p>
     </footer>
+
+    <!-- Modal für Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        /* Siehe JavaScript unten */
+    </script>
 </body>
 </html>
